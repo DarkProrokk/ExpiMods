@@ -7,17 +7,11 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Reference Include="0Harmony">
-        <HintPath>..\..\..\Downloads\Telegram Desktop\BepInEx_win_x64_5.4.23.5\BepInEx\core\0Harmony.dll</HintPath>
-      </Reference>
       <Reference Include="Assembly-CSharp">
         <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Casualties Unknown Demo\CasualtiesUnknown_Data\Managed\Assembly-CSharp.dll</HintPath>
       </Reference>
       <Reference Include="BepInEx">
         <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Casualties Unknown Demo\BepInEx\core\BepInEx.dll</HintPath>
-      </Reference>
-      <Reference Include="BepInEx.Harmony">
-        <HintPath>..\..\..\Downloads\Telegram Desktop\BepInEx_win_x64_5.4.23.5\BepInEx\core\BepInEx.Harmony.dll</HintPath>
       </Reference>
       <Reference Include="Mono.Security">
         <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Casualties Unknown Demo\CasualtiesUnknown_Data\Managed\Mono.Security.dll</HintPath>
