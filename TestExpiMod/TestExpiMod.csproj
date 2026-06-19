@@ -1,12 +1,19 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>net10.0</TargetFramework>
-        <ImplicitUsings>enable</ImplicitUsings>
-        <Nullable>enable</Nullable>
+        <TargetFramework>net472</TargetFramework>
+        <ImplicitUsings>disable</ImplicitUsings>
+        <LangVersion>7.3</LangVersion>
+        <Nullable>disable</Nullable>
+      <DisableImplicitFrameworkReferences>true</DisableImplicitFrameworkReferences>
+      <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
+      <AutoGenerateBindingRedirects>false</AutoGenerateBindingRedirects>
     </PropertyGroup>
 
     <ItemGroup>
+      <Reference Include="0Harmony">
+        <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Casualties Unknown Demo\BepInEx\core\0Harmony.dll</HintPath>
+      </Reference>
       <Reference Include="Assembly-CSharp">
         <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Casualties Unknown Demo\CasualtiesUnknown_Data\Managed\Assembly-CSharp.dll</HintPath>
       </Reference>
@@ -19,6 +26,9 @@
       <Reference Include="UnityEngine">
         <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Casualties Unknown Demo\CasualtiesUnknown_Data\Managed\UnityEngine.dll</HintPath>
       </Reference>
+      <Reference Include="UnityEngine.AudioModule">
+        <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Casualties Unknown Demo\CasualtiesUnknown_Data\Managed\UnityEngine.AudioModule.dll</HintPath>
+      </Reference>
       <Reference Include="UnityEngine.CoreModule">
         <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Casualties Unknown Demo\CasualtiesUnknown_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
       </Reference>
@@ -28,6 +38,17 @@
       <Reference Include="UnityEngine.InputModule">
         <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Casualties Unknown Demo\CasualtiesUnknown_Data\Managed\UnityEngine.InputModule.dll</HintPath>
       </Reference>
+      <Reference Include="UnityEngine.UnityWebRequestAudioModule">
+        <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Casualties Unknown Demo\CasualtiesUnknown_Data\Managed\UnityEngine.UnityWebRequestAudioModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.UnityWebRequestModule">
+        <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Casualties Unknown Demo\CasualtiesUnknown_Data\Managed\UnityEngine.UnityWebRequestModule.dll</HintPath>
+      </Reference>
+      <Reference Include="System" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Plugin\" />
     </ItemGroup>
 
 </Project>

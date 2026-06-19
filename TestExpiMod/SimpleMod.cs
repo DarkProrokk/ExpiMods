@@ -1,6 +1,11 @@
-﻿using BepInEx;
+﻿using System.Collections;
+using System.IO;
+using System.Threading;
+using BepInEx;
 using HarmonyLib;
+using TestExpiMod.Audio;
 using UnityEngine;
+using UnityEngine.Networking;
 
 
 [BepInPlugin("com.test.simplemod", "Simple Mod", "1.0.0")]
@@ -8,40 +13,30 @@ public class SimpleMod : BaseUnityPlugin
 {
     private void Awake()
     {
-        Logger.LogInfo("Mod loaded!");
-        UnityEngine.Debug.Log("Mod loaded! GameLog");
+        Debug.Log($"GO: {gameObject.name}");
+        Debug.Log($"Scene: {gameObject.scene.name}");
+        Debug.Log($"Unity version: {Application.unityVersion}");
+        Debug.Log("AWAKE ENTERED");
         Harmony harmony = new Harmony("com.test.simplemod");
         harmony.PatchAll();
     }
 
-    private void Update()
-    {
-        Logger.LogInfo("tick");
+    
 
-        if (Input.GetKeyDown(KeyCode.F5))
-        {
-            Logger.LogInfo("F5 pressed!");
-        }
-    }
-}
-[HarmonyPatch(typeof(GroundGlass), "OnCollisionEnter2D")]
-class PatchGlass
-{
-    static void Postfix()
+    [HarmonyPatch(typeof(PreRunScript), "Start")]
+    class PreRunPatch
     {
-        UnityEngine.Debug.Log("Glass event hooked");
-    }
-}
-[HarmonyPatch(typeof(Sound), "Play")]
-class Patch_Sound_Play
-{
-    static bool Prefix(ref string clip, Vector2 pos)
-    {
-        if (clip != null && clip == "glassshard")
+        [HarmonyPostfix]
+        static void Postfix()
         {
-            UnityEngine.Debug.Log("Glass sound");
+            
+            Debug.Log($"PreRunPatch Postfix");
+            AudioBootstrap.Instance.Init();
         }
 
-        return true;
     }
 }
+
+
+
+
